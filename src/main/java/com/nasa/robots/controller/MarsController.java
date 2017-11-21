@@ -31,7 +31,7 @@ public class MarsController {
 	
 
     @RequestMapping("/rest/mars/{instruction}")
-    public Robot instrucao(@PathVariable("instruction") String instruction) throws Exception {
+    public String instrucao(@PathVariable("instruction") String instruction) throws Exception {
         Robot robot = new Robot();
         
         
@@ -43,7 +43,7 @@ public class MarsController {
 		
 		validarTerreno(robot);
 		
-    	return robot;
+    	return robot.getPosicao();
     }
     
     public void validarTerreno(Robot robot) {
